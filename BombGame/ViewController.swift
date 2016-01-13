@@ -32,6 +32,6 @@ class ViewController: UIViewController {
         blueBomb.hidden = true
         redBomb.hidden = false
     }
-    
+    //want to make a pusher
 }
 
