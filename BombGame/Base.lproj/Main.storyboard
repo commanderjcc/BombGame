@@ -1,25 +1,71 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BombGame" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jq-eL-Vj4">
+                                <rect key="frame" x="46" y="319" width="110" height="30"/>
+                                <state key="normal" title="Hide Blue Bomb"/>
+                                <connections>
+                                    <action selector="blueButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AuZ-ud-1wJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rw8-AV-Yo7">
+                                <rect key="frame" x="222" y="319" width="107" height="30"/>
+                                <state key="normal" title="Hide Red Bomb">
+                                    <color key="titleColor" red="1" green="0.181266605" blue="0.1120005219" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="redButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Qn-Oc-pJc"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="090629-blue-jelly-icon-signs-bomb" translatesAutoresizingMaskIntoConstraints="NO" id="KHe-FL-muO">
+                                <rect key="frame" x="-31" y="20" width="256" height="256"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="095711-simple-red-glossy-icon-signs-bomb" translatesAutoresizingMaskIntoConstraints="NO" id="jGx-o1-7Xo">
+                                <rect key="frame" x="155" y="37" width="256" height="256"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3jq-eL-Vj4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0WD-sd-eSi"/>
+                            <constraint firstItem="Rw8-AV-Yo7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7mS-PG-Y64"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Rw8-AV-Yo7" secondAttribute="trailing" constant="30" id="MBc-Xz-JRW"/>
+                            <constraint firstItem="Rw8-AV-Yo7" firstAttribute="top" secondItem="KHe-FL-muO" secondAttribute="bottom" constant="43" id="Nc1-as-UHZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jGx-o1-7Xo" secondAttribute="trailing" constant="-52" id="UaD-8H-beQ"/>
+                            <constraint firstItem="KHe-FL-muO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-47" id="WEF-61-b1x"/>
+                            <constraint firstItem="3jq-eL-Vj4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="WoU-hd-30h"/>
+                            <constraint firstItem="Rw8-AV-Yo7" firstAttribute="top" secondItem="jGx-o1-7Xo" secondAttribute="bottom" constant="26" id="gQR-8a-tth"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="blueBomb" destination="KHe-FL-muO" id="xPq-2m-d1P"/>
+                        <outlet property="redBomb" destination="jGx-o1-7Xo" id="HQu-pk-w27"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="244.5" y="305.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="090629-blue-jelly-icon-signs-bomb" width="256" height="256"/>
+        <image name="095711-simple-red-glossy-icon-signs-bomb" width="256" height="256"/>
+    </resources>
 </document>
